@@ -42,7 +42,7 @@ class TheViewModel extends InheritedWidget {
       : super(key: key, child: child);
 
   static WeatherViewModel of(BuildContext context) =>
-      context!.dependOnInheritedWidgetOfExactType<TheViewModel>()!.theModel;
+      context.dependOnInheritedWidgetOfExactType<TheViewModel>()!.theModel;
 
   @override
   bool updateShouldNotify(TheViewModel oldWidget) =>

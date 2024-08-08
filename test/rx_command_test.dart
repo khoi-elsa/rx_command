@@ -649,15 +649,15 @@ void main() {
     expect(count, 1);
   });
 
-  Future<String?> _f1 (String s) async {
+  Future<String?> _f1(String s) async {
     return Future.value(s);
   }
-  Future<String?> _f2 (String s) async {
+
+  Future<String?> _f2(String s) async {
     return Future.value(null);
   }
 
   test('Nullability test', () async {
-
     final command1 = RxCommand.createAsync<String, String?>(_f1);
     expect(command1, emits("Non-nullable string"));
     command1.execute("Non-nullable string");
@@ -667,7 +667,6 @@ void main() {
     command2.execute("Non-nullable string");
   });
 
-  
   test("Nullability test for next'able", () async {
     final cmd = RxCommand.createAsyncNoParam<int>(() async {
       await Future.delayed(Duration(milliseconds: 1000));
@@ -675,7 +674,7 @@ void main() {
     }, initialLastResult: 0);
 
     cmd.execute();
-    final result = await cmd.next is int;
+    final result = await cmd.next;
 
     expect(result, true);
   });
