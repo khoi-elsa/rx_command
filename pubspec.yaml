@@ -4,10 +4,10 @@ version: 6.1.0
 maintainer: Thomas Burkhart (@escamoteur)
 homepage: https://github.com/fluttercommunity/rx_command
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=2.6.0 <3.0.0'
 
 dependencies:
-  rxdart: ^0.28.0
+  rxdart: ^0.27.0
   quiver: ^3.0.1
 
 
